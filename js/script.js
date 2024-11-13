@@ -40,10 +40,14 @@ fetch("https://striveschool-api.herokuapp.com/books")
       (element) =>
         (element.onclick = () => {
           const li = document.createElement("li");
+          const removeBtn = document.createElement("button");
+          removeBtn.innerText = "remove";
+          removeBtn.classList.add("btn", "btn-danger", "mx-4", "my-1");
           const cardShopped = element.closest(".card");
           const titleCardShopped = cardShopped.querySelector(".card-title");
           li.innerText = titleCardShopped.innerText;
           ul.appendChild(li);
+          li.appendChild(removeBtn);
         })
     );
   })
